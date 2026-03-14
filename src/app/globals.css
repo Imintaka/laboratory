@@ -8,7 +8,8 @@
   --color-brand-burgundy: #5f1f1f;
   --shadow-panel: 0 22px 60px rgba(17, 17, 17, 0.12);
   --shadow-soft: 0 10px 30px rgba(17, 17, 17, 0.08);
-  --font-display: Georgia, 'Times New Roman', serif;
+  --font-display: var(--font-playfair-display), Georgia, 'Times New Roman', serif;
+  --font-body: var(--font-inter), Arial, sans-serif;
 }
 
 html {
@@ -27,6 +28,7 @@ body {
 @layer base {
   body {
     @apply text-zinc-900;
+    font-family: var(--font-body);
   }
 
   h1,
