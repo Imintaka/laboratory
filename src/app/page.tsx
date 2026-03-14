@@ -39,13 +39,15 @@ export default function HomePage() {
                   <Image
                     src="/images/laba_logo2.png"
                     alt="Laba"
-                    width={400}
-                    height={400}
+                    width={450}
+                    height={430}
                     priority
                   />
                 </Link>
 
-                <div className="eyebrow w-fit text-white">{hero.eyebrow}</div>
+                <div className="eyebrow w-full justify-center rounded-[1.35rem] border-white/16 bg-white/12 px-4 py-3 text-center text-sm leading-6 text-white shadow-[0_16px_40px_rgba(17,17,17,0.18)] sm:w-fit sm:justify-start sm:px-5 sm:py-2 sm:text-left">
+                  {hero.eyebrow}
+                </div>
 
                 <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                   <a href={hero.primaryAction.href} className={heroPrimaryActionClass}>
