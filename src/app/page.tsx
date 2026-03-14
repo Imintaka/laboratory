@@ -3,17 +3,7 @@ import Link from 'next/link'
 
 import { Container } from '@/components/layout/Container'
 import { DishCard } from '@/components/ui/DishCard'
-import {
-  about,
-  address,
-  contacts,
-  dishes,
-  features,
-  hero,
-  highlights,
-  menu,
-  visitSteps,
-} from '@/data/home'
+import { about, address, contacts, dishes, features, hero, highlights, menu } from '@/data/home'
 
 const heroPrimaryActionClass =
   'inline-flex justify-center rounded-full bg-amber-400 px-5 py-3 text-sm font-semibold text-zinc-950 shadow-lg shadow-amber-950/15 hover:bg-amber-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
@@ -27,7 +17,7 @@ export default function HomePage() {
       <section className="relative -mt-24 overflow-hidden pt-28">
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/images/rosario.webp"
+            src="/images/rosario1.webp"
             alt="Гостевой зал LaboratoryBar"
             fill
             priority
@@ -39,36 +29,44 @@ export default function HomePage() {
 
         <Container>
           <div className="grid min-h-[calc(100dvh-4rem)] items-center gap-12 py-16 lg:grid-cols-[1.15fr_0.85fr] lg:py-20">
-            <div className="max-w-3xl">
-              <Link
-                href="/"
-                className="mt-6 inline-flex items-center gap-3"
-                aria-label="LaboratoryBar"
-              >
-                <Image src="/images/laba_logo2.png" alt="Laba" width={300} height={300} priority />
-              </Link>
-              <div className="eyebrow text-white">{hero.eyebrow}</div>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <a href={hero.primaryAction.href} className={heroPrimaryActionClass}>
-                  {hero.primaryAction.label}
-                </a>
-                <a href={hero.secondaryAction.href} className={heroSecondaryActionClass}>
-                  {hero.secondaryAction.label}
-                </a>
-                <a href="#contacts" className={heroSecondaryActionClass}>
-                  Как добраться
-                </a>
-              </div>
-              <div className="mt-10 grid gap-4 sm:grid-cols-3">
-                {highlights.map((item) => (
-                  <div
-                    key={item.label}
-                    className="rounded-[1.5rem] border border-white/12 bg-white/8 p-4 backdrop-blur"
-                  >
-                    <div className="text-2xl font-semibold text-white">{item.value}</div>
-                    <div className="mt-2 text-sm leading-6 text-white/70">{item.label}</div>
-                  </div>
-                ))}
+            <div className="w-full max-w-[42rem]">
+              <div className="flex flex-col gap-6 lg:gap-7">
+                <Link
+                  href="/"
+                  className="inline-flex w-fit items-center"
+                  aria-label="LaboratoryBar"
+                >
+                  <Image
+                    src="/images/laba_logo2.png"
+                    alt="Laba"
+                    width={300}
+                    height={300}
+                    priority
+                  />
+                </Link>
+
+                <div className="eyebrow w-fit text-white">{hero.eyebrow}</div>
+
+                <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                  <a href={hero.primaryAction.href} className={heroPrimaryActionClass}>
+                    {hero.primaryAction.label}
+                  </a>
+                  <a href={hero.secondaryAction.href} className={heroSecondaryActionClass}>
+                    {hero.secondaryAction.label}
+                  </a>
+                </div>
+
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                  {highlights.map((item) => (
+                    <div
+                      key={item.label}
+                      className="flex min-h-28 flex-col justify-between rounded-[1.5rem] border border-white/10 bg-white/7 px-4 py-3.5 backdrop-blur-[6px]"
+                    >
+                      <div className="text-2xl font-semibold text-white">{item.value}</div>
+                      <div className="mt-4 text-sm leading-6 text-white/68">{item.label}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -80,7 +78,7 @@ export default function HomePage() {
           <div className="section-panel grid gap-10 p-8 md:grid-cols-[1.15fr_0.85fr] md:items-center lg:p-10">
             <div>
               <div className="text-xs font-semibold uppercase tracking-[0.24em] text-amber-700">
-                О пространстве
+                О нас
               </div>
               <h2 className="mt-4 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
                 {about.title}
@@ -103,9 +101,6 @@ export default function HomePage() {
 
         <section id="menu" className="scroll-mt-28 pb-20 pt-10">
           <div className="mx-auto max-w-3xl text-center">
-            <div className="text-xs font-semibold uppercase tracking-[0.24em] text-amber-700">
-              Популярные позиции
-            </div>
             <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
               {menu.title}
             </h2>

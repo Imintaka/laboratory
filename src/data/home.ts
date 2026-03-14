@@ -119,7 +119,7 @@ export const visitSteps: VisitStep[] = [
 ]
 
 export const menu = {
-  title: 'Меню, которое работает на вечер',
+  title: 'Меню',
   subtitle:
     'Небольшой список популярных позиций, чтобы быстро выбрать закуску и не выпадать из общения.',
 }
@@ -129,7 +129,7 @@ export const dishes: Dish[] = [
     title: 'Бургер «Лабораторный»',
     description: 'Сочная котлета, фирменный соус и булочка с мягкой карамельной корочкой.',
     price: 18,
-    imageSrc: '/images/laba_logo2.png',
+    imageSrc: '/images/burger.webp',
     accent: 'Хит вечера',
     tags: ['сытно', 'к мясу'],
   },
@@ -137,7 +137,7 @@ export const dishes: Dish[] = [
     title: 'Картофель фри',
     description: 'Хрустящая подача с солью и соусом, который не забивает вкус напитка.',
     price: 7,
-    imageSrc: '/images/laba_logo.png',
+    imageSrc: '/images/fri.webp',
     accent: 'Быстрая подача',
     tags: ['классика', 'на компанию'],
   },
@@ -145,7 +145,7 @@ export const dishes: Dish[] = [
     title: 'Куриные крылышки',
     description: 'Пряная глазурь и плотный вкус для более насыщенного стола.',
     price: 16,
-    imageSrc: '/images/laba-logo12.png',
+    imageSrc: '/images/chicken.webp',
     accent: 'К крепким миксам',
     tags: ['острое', 'горячее'],
   },
@@ -153,7 +153,7 @@ export const dishes: Dish[] = [
     title: 'Сырные палочки',
     description: 'Золотистая корочка, тягучий сыр и предсказуемо хороший выбор к первому раунду.',
     price: 12,
-    imageSrc: '/images/laba_logo2.png',
+    imageSrc: '/images/cheese.webp',
     accent: 'Комфортный выбор',
     tags: ['делиться', 'без лишнего'],
   },
