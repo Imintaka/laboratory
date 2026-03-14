@@ -33,8 +33,8 @@ export function Header() {
   const shellOverlayClassName = isScrolledPastHero ? 'bg-[#f3d389]/10' : 'bg-white/10'
 
   const navLinkClassName = isScrolledPastHero
-    ? 'inline-flex h-11 items-center justify-center whitespace-nowrap rounded-full border border-[#f3d389]/18 bg-[#f1d18c]/10 px-4 text-xs font-semibold tracking-[0.16em] text-amber-50 shadow-[inset_0_1px_0_rgba(255,243,214,0.12)] backdrop-blur-sm hover:border-[#f3d389]/30 hover:bg-[#f1d18c]/16 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900 md:text-sm'
-    : 'inline-flex h-11 items-center justify-center whitespace-nowrap rounded-full border border-white/40 bg-white/24 px-4 text-xs font-semibold tracking-[0.16em] text-zinc-950 shadow-[inset_0_1px_0_rgba(255,255,255,0.22)] backdrop-blur-sm hover:border-white/55 hover:bg-white/38 hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900 md:text-sm'
+    ? 'inline-flex h-7 items-center justify-center whitespace-nowrap rounded-full border border-[#f3d389]/18 bg-[#f1d18c]/10 px-2.5 text-[10px] font-semibold tracking-[0.1em] text-amber-50 shadow-[inset_0_1px_0_rgba(255,243,214,0.12)] backdrop-blur-sm hover:border-[#f3d389]/30 hover:bg-[#f1d18c]/16 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900 md:h-11 md:px-4 md:text-sm md:tracking-[0.16em]'
+    : 'inline-flex h-7 items-center justify-center whitespace-nowrap rounded-full border border-white/40 bg-white/24 px-2.5 text-[10px] font-semibold tracking-[0.1em] text-zinc-950 shadow-[inset_0_1px_0_rgba(255,255,255,0.22)] backdrop-blur-sm hover:border-white/55 hover:bg-white/38 hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900 md:h-11 md:px-4 md:text-sm md:tracking-[0.16em]'
 
   const ctaClassName = isScrolledPastHero
     ? 'hidden rounded-full bg-[#f0c96d] px-5 py-3 text-sm font-semibold text-[#2b1a04] shadow-[0_8px_18px_rgba(32,20,4,0.18)] hover:bg-[#f4d68b] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900 md:inline-flex'
