@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     images: [siteConfig.ogImage],
   },
   icons: {
-    icon: '/images/laba_logo.png',
+    icon: '/images/laba_logo2.png',
     apple: '/images/laba_logo2.png',
   },
 }

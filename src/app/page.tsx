@@ -39,8 +39,8 @@ export default function HomePage() {
                   <Image
                     src="/images/laba_logo2.png"
                     alt="Laba"
-                    width={300}
-                    height={300}
+                    width={400}
+                    height={400}
                     priority
                   />
                 </Link>
@@ -60,10 +60,10 @@ export default function HomePage() {
                   {highlights.map((item) => (
                     <div
                       key={item.label}
-                      className="flex min-h-28 flex-col justify-between rounded-[1.5rem] border border-white/10 bg-white/7 px-4 py-3.5 backdrop-blur-[6px]"
+                      className="flex min-h-28 flex-col rounded-[1.5rem] border border-white/10 bg-white/7 px-4 py-3.5 backdrop-blur-[6px]"
                     >
                       <div className="text-2xl font-semibold text-white">{item.value}</div>
-                      <div className="mt-4 text-sm leading-6 text-white/68">{item.label}</div>
+                      <div className="mt-2 text-sm leading-6 text-white/68">{item.label}</div>
                     </div>
                   ))}
                 </div>

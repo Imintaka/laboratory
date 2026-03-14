@@ -43,9 +43,9 @@ export const siteDescription =
   'Коктейльный бар в Микашевичах с авторскими миксами, вечерними сетами и понятным меню закусок.'
 
 export const navItems: NavItem[] = [
-  { href: '#about', label: 'О нас' },
   { href: '#menu', label: 'Меню' },
   { href: '#contacts', label: 'Контакты' },
+  { href: '#about', label: 'О нас' },
 ]
 
 export const address = 'г. Микашевичи, ул. Первомайская, 9Б'
