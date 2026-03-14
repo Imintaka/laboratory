@@ -22,8 +22,10 @@
 
 # misc
 .DS_Store
+Thumbs.db
 *.pem
 .idea/
+.vscode/
 
 # debug
 npm-debug.log*
@@ -40,3 +42,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local AI / workflow docs
+AGENTS.md
+PROJECT_STRUCTURE_AND_TASKS.md
