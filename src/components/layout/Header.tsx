@@ -1,111 +1,43 @@
-'use client'
-
-import Link from 'next/link'
 import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
 
-const navItems = [
-  { href: '#about', label: 'О нас' },
-  { href: '#menu', label: 'Меню' },
-  { href: '#contacts', label: 'Контакты' },
-]
+import { navItems, siteName } from '@/data/home'
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isSlidingUp, setIsSlidingUp] = useState(false)
-  const prevIsScrolledRef = useRef(false)
-  const slideUpTimeoutRef = useRef<number | null>(null)
-
-  useEffect(() => {
-    const onScroll = () => {
-      const nextIsScrolled = window.scrollY > 24
-
-      if (prevIsScrolledRef.current && !nextIsScrolled) {
-        setIsSlidingUp(true)
-
-        if (slideUpTimeoutRef.current !== null) {
-          window.clearTimeout(slideUpTimeoutRef.current)
-        }
-
-        slideUpTimeoutRef.current = window.setTimeout(() => {
-          setIsSlidingUp(false)
-          slideUpTimeoutRef.current = null
-        }, 700)
-      }
-
-      prevIsScrolledRef.current = nextIsScrolled
-      setIsScrolled(nextIsScrolled)
-    }
-
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => {
-      window.removeEventListener('scroll', onScroll)
-      if (slideUpTimeoutRef.current !== null) {
-        window.clearTimeout(slideUpTimeoutRef.current)
-      }
-    }
-  }, [])
-
   return (
-    <header
-      className={'sticky top-0 z-50 overflow-hidden transition-colors duration-700 ease-out '}
-    >
-      <div
-        className={
-          'absolute inset-0 -z-10 ' +
-          (isScrolled || isSlidingUp ? 'bg-[#e4b257]/90 backdrop-blur' : 'bg-transparent') +
-          (isScrolled ? ' header-slide-down' : '') +
-          (isSlidingUp ? ' header-slide-up' : '')
-        }
-        aria-hidden="true"
-      />
-
-      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 relative">
+    <header className="sticky top-0 z-50 px-3 pt-3 sm:px-4">
+      <div className="mx-auto flex h-17 max-w-6xl items-center justify-between rounded-[1.75rem] border border-white/65 bg-white/78 px-4 shadow-[var(--shadow-soft)] backdrop-blur md:px-5">
         <Link
           href="/"
-          className={
-            'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-700 ease-out ' +
-            (isScrolled
-              ? 'opacity-100 scale-100 delay-200'
-              : 'opacity-0 scale-95 pointer-events-none delay-0')
-          }
-          aria-label="CoffeePlace — главная страница"
+          className="flex items-center gap-3"
+          aria-label={`${siteName} — главная страница`}
         >
-          <Image src="/images/laba_logo2.png" alt="Laba" width={150} height={150} priority />
+          <Image src="/images/laba_logo2.png" alt={siteName} width={150} height={150} priority />
         </Link>
 
-        <nav
-          className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2"
-          aria-label="Главная навигация"
-        >
-          <ul className="flex items-center gap-0.5">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  className={
-                    'w-25 h-13 inline-flex items-center justify-center bg-[#d3c157]/90 rounded-none border-[#d3c157]/70 shadow-[0_0_1px_1px_rgba(0,0,0,0.12)] px-4 py-2 text-sm font-medium tracking-wide uppercase text-black transition-colors hover:bg-[#ccb73d]'
-                  }
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <button
-          type="button"
-          className={
-            'absolute right-4 top-1/2 -translate-y-1/2 inline-flex items-center justify-center rounded-md px-3 py-2 text-sm font-medium tracking-wide md:hidden ' +
-            (isScrolled
-              ? 'border border-zinc-300 bg-white text-zinc-900'
-              : 'border border-white/30 bg-white/10 text-white backdrop-blur')
-          }
-          aria-label="Открыть меню"
-        >
-          Меню
-        </button>
+        <div className="flex items-center gap-3">
+          <nav aria-label="Главная навигация">
+            <ul className="flex items-center gap-2 overflow-x-auto">
+              {navItems.map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    className="inline-flex h-11 items-center justify-center whitespace-nowrap rounded-full border border-zinc-200/80 bg-white/65 px-4 text-xs font-semibold tracking-[0.16em] text-zinc-800 shadow-sm hover:border-amber-300 hover:bg-amber-50 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900 md:text-sm"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <a
+            href="tel:+375447618121"
+            className="hidden rounded-full bg-zinc-950 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900 md:inline-flex"
+          >
+            Забронировать
+          </a>
+        </div>
       </div>
     </header>
   )

@@ -1,27 +1,54 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-@keyframes headerSlideDown {
-  from {
-    transform: translateY(-100%);
+@theme {
+  --color-brand-gold: #d9a441;
+  --color-brand-gold-soft: #f1ddb4;
+  --color-brand-ink: #111111;
+  --color-brand-cream: #f7f2e8;
+  --color-brand-burgundy: #5f1f1f;
+  --shadow-panel: 0 22px 60px rgba(17, 17, 17, 0.12);
+  --shadow-soft: 0 10px 30px rgba(17, 17, 17, 0.08);
+  --font-display: Georgia, 'Times New Roman', serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-brand-gold) 65%, white);
+  color: var(--color-brand-ink);
+}
+
+@layer base {
+  body {
+    @apply text-zinc-900;
   }
-  to {
-    transform: translateY(0);
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+  }
+
+  a,
+  button {
+    @apply motion-safe:transition;
   }
 }
 
-@keyframes headerSlideUp {
-  from {
-    transform: translateY(0);
+@layer components {
+  .section-panel {
+    @apply rounded-[2rem] border border-white/60 bg-white/72 shadow-[var(--shadow-panel)] backdrop-blur;
   }
-  to {
-    transform: translateY(-100%);
+
+  .eyebrow {
+    @apply inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em];
   }
-}
-
-.header-slide-down {
-  animation: headerSlideDown 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.header-slide-up {
-  animation: headerSlideUp 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
